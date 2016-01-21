@@ -1,62 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="build" name="running java class using ant">
-  <target name="chm" depends="run">
-    <chmod file="/var/lib/jenkins/files/local.pem" perm="600"/>
-  </target>
-  <target name="sc" depends="run">
-    <scp file="/var/lib/jenkins/workspace/First\ Project/build/jar/javacompile.jar"
-       todir="ec2-user@54.175.20.17:/home" 
-       keyfile="/home/ubuntu/ge.pem"
-       passphrase=""
-  />
-  </target>
-  <target name="info" depends="run">
-    <exec dir="src" executable="/bin/bash">
-      <arg value="filetransfer.sh"/>
-    </exec>
-  </target>
-  <target name="execute" depends="compile">
-    <java classname="Java" classpath="build/classes" fork="true"/>
-  </target>
-  <target name="compile">
-    <mkdir dir="build/classes"/>
-    <javac includeantruntime="false" srcdir="src" destdir="build/classes"/>
+  <target name="build" depends="clean">
+    <mkdir dir="build"/>
+    <javac includeantruntime="false" srcdir="src" destdir="build"/>
   </target>
   <target name="clean">
-    <!--<exec executable="sudo" inputstring="ptc@123&#10;">
-    <exec executable="sudo">
-      <arg value="sudo chmod -R 777 build/"/>
-      echo -e "\n"|sudo -S command     <redirector inputstring=""/>   
-    </exec>
-    <exec executable="/bin/sh">
-        <arg line="-c 'sudo chmod -R 777 bulid'"/>
-        <redirector inputstring="\n"/>
-    </exec>
-    <exec executable="sudo" inputstring="#10;">
-      <arg line="chmod -R 777 build"/>
-    </exec>
-    <chmod dir="build/" perm="777"/>
-     -->
     <delete dir="build"/>
-  </target>
-  <target name="build" depends="compile">
-    <mkdir dir="build/jar"/>
-        <jar destfile="build/jar/javacompile.jar" basedir="build/classes">
-            <manifest>
-                <attribute name="Main-Class" value="Java"/>
-            </manifest>
-        </jar>
-  </target>
-  <!--
-  <target name="ssh2other">
-    <sshexec 
-      host="ec2-52-90-246-221.compute-1.amazonaws.com" 
-      username="ec2-user" 
-      keyfile=""  
-      command="ls -l"/>
-  </target>
-  -->
-  <target name="run" depends="build">
-    <java jar="build/jar/javacompile.jar" fork="true"/>
   </target>
 </project>
