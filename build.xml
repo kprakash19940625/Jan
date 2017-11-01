@@ -9,5 +9,6 @@
   </target>
   <target name="clean">
     <delete dir="build"/>
+    <delete file="index.html"/>
   </target>
 </project>
