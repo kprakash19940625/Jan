@@ -1,11 +1,11 @@
 import java.util.Random;
 public class GenerateRandom {
-  public int generate() {
+  public static int generate() {
     Random randomGenerator = new Random();
     int n = randomGenerator.nextInt(10);
     return n;
   }
-  public void main(String args[]){
+  public static void main(String args[]){
     System.out.println(generate());
   }
 }
