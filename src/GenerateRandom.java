@@ -14,7 +14,9 @@ public class GenerateRandom {
     try {
         writer = new FileWriter(file, true);
         PrintWriter printer = new PrintWriter(writer);
-        printer.write("<html><body>HelloWorld</body></html>");
+        printer.write("<html>\n");
+        printer.write("<body>HelloWorld</body>\n");
+        printer.write("</html>\n");
         System.out.println("Index.html created");
         printer.close();
     } catch (IOException e) {
