@@ -14,7 +14,8 @@ public class GenerateRandom {
     try {
         writer = new FileWriter(file, true);
         PrintWriter printer = new PrintWriter(writer);
-        printer.write("HelloWorld");
+        printer.write("<html><body>HelloWorld</body></html>");
+        System.out.println("Index.html created");
         printer.close();
     } catch (IOException e) {
         // TODO Auto-generated catch block
