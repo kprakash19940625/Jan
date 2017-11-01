@@ -5,4 +5,7 @@ public class GenerateRandom {
     int n = randomGenerator.nextInt(10);
     return n;
   }
+  public void main(String args[]){
+    System.out.println(generate());
+  }
 }
