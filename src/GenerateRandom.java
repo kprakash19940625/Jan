@@ -6,6 +6,7 @@ public class GenerateRandom {
     return n;
   }
   public static void main(String args[]){
-    System.out.println(generate());
+    System.out.println("Hello World");
+    //System.out.println(generate());
   }
 }
