@@ -7,7 +7,6 @@ public class GenerateRandom {
     int n = randomGenerator.nextInt(10);
     return n;
   }
-}
   public static void main(String args[]){
     //System.out.println("Hello World");
     File file = new File("index.html");
