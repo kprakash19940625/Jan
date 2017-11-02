@@ -19,7 +19,7 @@ public class GenerateRandom {
         printer.write("HelloWorld");
         printer.write("</body>\n");
         printer.write("</html>\n");
-        System.out.println("Successfully Created Index.html");
+        System.out.println("Successfully created Index.html");
         printer.close();
     } catch (IOException e) {
         // TODO Auto-generated catch block
