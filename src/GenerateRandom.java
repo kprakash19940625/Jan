@@ -17,7 +17,7 @@ public class GenerateRandom {
         printer.write("<html>\n");
         printer.write("<body>HelloWorld</body>\n");
         printer.write("</html>\n");
-        System.out.println("Successfully Index.html file created");
+        System.out.println("Successfully Index.html created");
         printer.close();
     } catch (IOException e) {
         // TODO Auto-generated catch block
