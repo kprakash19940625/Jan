@@ -15,8 +15,8 @@ public class GenerateRandom {
         writer = new FileWriter(file, true);
         PrintWriter printer = new PrintWriter(writer);
         printer.write("<html>\n");
-        printer.write("<body>");
-        printer.write("HelloWorld");
+        printer.write("<body>\n");
+        printer.write("HelloWorld\n");
         printer.write("</body>\n");
         printer.write("</html>\n");
         System.out.println("Successfully created Index.html");
